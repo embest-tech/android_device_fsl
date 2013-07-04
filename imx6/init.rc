@@ -180,9 +180,6 @@ on post-fs-data
     mkdir /data/app-private 0771 system system
     mkdir /data/app 0771 system system
     mkdir /data/property 0700 root root
-    mkdir /data/system 0775 system system
-    mkdir /data/system/wpa_supplicant 0771 wifi wifi
-    chmod 0771 /data/system/wpa_supplicant
 
     # create dalvik-cache and double-check the perms
     mkdir /data/dalvik-cache 0771 system system
@@ -325,13 +322,6 @@ on boot
     setprop alsa.mixer.playback.speaker Playback
     setprop alsa.mixer.playback.headset Headphone
     setprop alsa.mixer.capture.headset Capture
-
-# Prepare for wifi
-    setprop wifi.interface wlan0
-    setprop wifi.ap.interface wlan0
-    mkdir /data/misc/wifi/sockets 0770 wifi system
-    mkdir /data/misc/dhcp 0770 dhcp dhcp
-    chown dhcp dhcp /data/misc/dhcp
 
 # Prepare for bluetooth
     chmod 665 /sys/class/rfkill/rfkill0/state
@@ -580,22 +570,10 @@ service dumpstate /system/bin/dumpstate -s
     disabled
     oneshot
 
-service dhcpcd_wlan0 /system/bin/logwrapper /system/bin/dhcpcd -ABKL
-    class late_start
-    disabled
-    oneshot
-
 service dhcpcd_eth0 /system/bin/logwrapper /system/bin/dhcpcd -ABKL
     class late_start
     disabled
     oneshot
-
-service hostapd /system/bin/hostapd /data/misc/wifi/hostapd.conf
-    socket hostapd_wlan0 dgram 660 root wifi
-    user root
-    group wifi
-    oneshot
-    disabled
 
 service ril-daemon /system/bin/rild -l /system/lib/libreference-ril.so
     class main
