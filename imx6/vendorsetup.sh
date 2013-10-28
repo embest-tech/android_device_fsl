@@ -11,3 +11,5 @@ add_lunch_combo evk_6sl-eng
 add_lunch_combo evk_6sl-user
 add_lunch_combo hdmidongle_6dq-eng
 add_lunch_combo hdmidongle_6dq-user
+add_lunch_combo riot_6dq-eng
+add_lunch_combo riot_6dq-user
