@@ -26,7 +26,7 @@
 #used for all usb host
 dev_mount udisk /mnt/udisk auto /devices/platform/fsl-ehci
 #mount SDHC4 SD card /mnt/sdcard as primary storage forMX6Q SABER_LITE RevC
-dev_mount extsd /mnt/extsd auto /devices/platform/sdhci-esdhc-imx.2/mmc_host/mmc2
+dev_mount extsd /mnt/extsd auto /devices/platform/sdhci-esdhc-imx.2/mmc_host/mmc2 /devices/platform/sdhci-esdhc-imx.1/mmc_host/mmc1
 #mount SDHC3 TF card to /mnt/extsd as external storage forMX6Q SABER_LITE RevC
 #dev_mount sdcard /mnt/sdcard 4 /devices/platform/sdhci-esdhc-imx.3/mmc_host/mmc0
 
