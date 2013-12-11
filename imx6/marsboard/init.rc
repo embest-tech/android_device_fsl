@@ -70,6 +70,9 @@ on boot
     # No bluetooth hardware present
     setprop hw.bluetooth 0
 
+# Power Management Patches
+    setprop hw.nopm true
+
 # Prepare for wifi
     setprop wifi.interface ra0
     setprop wifi.ap.interface ra0
