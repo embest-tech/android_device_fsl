@@ -8,6 +8,7 @@ include device/fsl/imx6/BoardConfigCommon.mk
 include device/fsl-proprietary/gpu-viv/fsl-gpu.mk
 # riot_6solo default target for EXT4
 BUILD_TARGET_FS ?= ext4
+BUILD_TARGET_LOCATION ?= sdmmc
 include device/fsl/imx6/imx6_target_fs.mk
 
 ifeq ($(BUILD_TARGET_FS),ubifs)
@@ -16,10 +17,17 @@ TARGET_RECOVERY_FSTAB = device/fsl/riot_6solo/fstab_nand.freescale
 PRODUCT_COPY_FILES +=	\
 	device/fsl/riot_6solo/fstab_nand.freescale:root/fstab.freescale
 else
-TARGET_RECOVERY_FSTAB = device/fsl/riot_6solo/fstab.freescale
-# build for ext4
+ifeq ($(BUILD_TARGET_LOCATION),sdmmc)
+TARGET_RECOVERY_FSTAB = device/fsl/riot_6solo/fstab.freescale.sdmmc
+# build ext4 for sdmmc
+PRODUCT_COPY_FILES +=   \
+	device/fsl/riot_6solo/fstab.freescale.sdmmc:root/fstab.freescale
+else
+TARGET_RECOVERY_FSTAB = device/fsl/riot_6solo/fstab.freescale.emmc
+# build ext4 for emmc
 PRODUCT_COPY_FILES +=	\
-	device/fsl/riot_6solo/fstab.freescale:root/fstab.freescale
+	device/fsl/riot_6solo/fstab.freescale.emmc:root/fstab.freescale
+endif # BUILD_TARGET_LOCATION
 endif # BUILD_TARGET_FS
 
 
