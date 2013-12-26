@@ -8,7 +8,7 @@ include device/fsl/imx6/BoardConfigCommon.mk
 include device/fsl-proprietary/gpu-viv/fsl-gpu.mk
 # riot_6solo default target for EXT4
 BUILD_TARGET_FS ?= ext4
-BUILD_TARGET_LOCATION ?= sdmmc
+BUILD_TARGET_LOCATION ?= emmc
 include device/fsl/imx6/imx6_target_fs.mk
 
 ifeq ($(BUILD_TARGET_FS),ubifs)
