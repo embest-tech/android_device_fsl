@@ -388,8 +388,8 @@ on boot
     setprop alsa.mixer.capture.headset Capture
 
 # Prepare for wifi
-    setprop wifi.interface wlan0
-    setprop wifi.ap.interface wlan0
+#    setprop wifi.interface wlan0
+#    setprop wifi.ap.interface wlan0
 
 # Prepare for bluetooth
     chmod 665 /sys/class/rfkill/rfkill0/state
@@ -641,10 +641,10 @@ service mdnsd /system/bin/mdnsd
     disabled
     oneshot
 
-service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL
-    class main
-    disabled
-    oneshot
+#service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL
+#    class main
+#    disabled
+#    oneshot
 
 service dhcpcd_p2p /system/bin/dhcpcd -ABKL
     class main
@@ -664,19 +664,19 @@ service iprenew_bt-pan /system/bin/dhcpcd -n
     disabled
     oneshot
 
-service hostapd /system/bin/hostapd /data/misc/wifi/hostapd.conf
-    socket hostapd_wlan0 dgram 660 root wifi
-    user root
-    group wifi
-    oneshot
-    disabled
+#service hostapd /system/bin/hostapd /data/misc/wifi/hostapd.conf
+#    socket hostapd_wlan0 dgram 660 root wifi
+#    user root
+#    group wifi
+#    oneshot
+#    disabled
 
-service rtl_hostapd /system/bin/hostapd /data/misc/wifi/hostapd.conf
-    socket hostapd_wlan0 dgram 660 root wifi
-    user root
-    group wifi
-    oneshot
-    disabled
+#service rtl_hostapd /system/bin/hostapd /data/misc/wifi/hostapd.conf
+#    socket hostapd_wlan0 dgram 660 root wifi
+#    user root
+#    group wifi
+#    oneshot
+#    disabled
 
 service ril-daemon /system/bin/rild
     class main
@@ -697,10 +697,10 @@ service wifi_mac /system/bin/sh /system/etc/check_wifi_mac.sh
     class late_start
     oneshot
 
-service iprenew_wlan0 /system/bin/dhcpcd -n
-    class main
-    disabled
-    oneshot
+#service iprenew_wlan0 /system/bin/dhcpcd -n
+#    class main
+#    disabled
+#    oneshot
 
 service iprenew_p2p /system/bin/dhcpcd -n
     class main

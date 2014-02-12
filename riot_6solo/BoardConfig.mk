@@ -34,30 +34,10 @@ endif # BUILD_TARGET_FS
 TARGET_BOOTLOADER_BOARD_NAME := RIOT
 PRODUCT_MODEL := RIOT-MX6SOLO
 
-# UNITE is a virtual device support both atheros and realtek wifi(ar6103 and rtl8723as)
-BOARD_WLAN_DEVICE            := UNITE
-WPA_SUPPLICANT_VERSION       := VER_0_8_UNITE
-TARGET_KERNEL_MODULES        := \
-                                kernel_imx/drivers/net/wireless/rtl8723as/8723as.ko:system/lib/modules/8723as.ko \
-                                kernel_imx/net/wireless/cfg80211.ko:system/lib/modules/cfg80211_realtek.ko
-BOARD_WPA_SUPPLICANT_DRIVER  := NL80211
-BOARD_HOSTAPD_DRIVER         := NL80211
-
-BOARD_HOSTAPD_PRIVATE_LIB_QCOM              := lib_driver_cmd_qcwcn
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB_QCOM       := lib_driver_cmd_qcwcn
-BOARD_HOSTAPD_PRIVATE_LIB_RTL               := lib_driver_cmd_rtl
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB_RTL        := lib_driver_cmd_rtl
-#for intel vendor
-ifeq ($(BOARD_WLAN_VENDOR),INTEL)
-BOARD_HOSTAPD_PRIVATE_LIB                := private_lib_driver_cmd
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB         := private_lib_driver_cmd
-WPA_SUPPLICANT_VERSION                   := VER_0_8_X
-HOSTAPD_VERSION                          := VER_0_8_X
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB         := private_lib_driver_cmd_intel
-WIFI_DRIVER_MODULE_PATH                  := "/system/lib/modules/iwlagn.ko"
-WIFI_DRIVER_MODULE_NAME                  := "iwlagn"
-WIFI_DRIVER_MODULE_PATH                  ?= auto
-endif
+# Wifi
+BOARD_WPA_SUPPLICANT_DRIVER     := WEXT
+WIFI_DRIVER_MODULE_PATH         := "/system/lib/hw/rt5370sta.ko"
+WIFI_DRIVER_MODULE_NAME         := "rt5370sta"
 
 BOARD_MODEM_VENDOR := AMAZON
 

@@ -21,7 +21,10 @@ PRODUCT_COPY_FILES += \
 	device/fsl/riot_6solo/init.rc:root/init.freescale.rc \
 	device/fsl/riot_6solo/gpsreset.sh:system/etc/gpsreset.sh \
 	device/fsl/riot_6solo/audio_policy.conf:system/etc/audio_policy.conf \
-	device/fsl/riot_6solo/audio_effects.conf:system/vendor/etc/audio_effects.conf
+	device/fsl/riot_6solo/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+	device/fsl/riot_6solo/rt5370sta.ko:system/lib/hw/rt5370sta.ko \
+	device/fsl/riot_6solo/RT2870STA.dat:/system/etc/Wireless/RT2870STA/RT2870STA.dat \
+	device/fsl/riot_6solo/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf
 
 # GPU files
 
@@ -34,7 +37,6 @@ PRODUCT_AAPT_CONFIG += xlarge large tvdpi hdpi
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
 	frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-	frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
 	frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
 	frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
 	frameworks/native/data/etc/android.hardware.faketouch.xml:system/etc/permissions/android.hardware.faketouch.xml \
