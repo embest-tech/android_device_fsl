@@ -79,3 +79,7 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 BOARD_KERNEL_CMDLINE := console=ttymxc0,115200 init=/init androidboot.console=ttymxc0 video=mxc_elcdif_fb:bpp=32 androidboot.hardware=freescale csi
 TARGET_BOOTLOADER_CONFIG := mx6sl:mx6sl_evk_android_config
+BOARD_SEPOLICY_DIRS := \
+       device/fsl/evk_6sl/sepolicy
+BOARD_SEPOLICY_UNION := \
+       app.te
