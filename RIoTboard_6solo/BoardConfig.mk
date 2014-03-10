@@ -3,36 +3,36 @@
 #
 
 include device/fsl/imx6/soc/imx6dq.mk
-include device/fsl/riot_6solo/build_id.mk
+include device/fsl/RIoTboard_6solo/build_id.mk
 include device/fsl/imx6/BoardConfigCommon.mk
 include device/fsl-proprietary/gpu-viv/fsl-gpu.mk
-# riot_6solo default target for EXT4
+# RIoTboard_6solo default target for EXT4
 BUILD_TARGET_FS ?= ext4
 BUILD_TARGET_LOCATION ?= emmc
 include device/fsl/imx6/imx6_target_fs.mk
 
 ifeq ($(BUILD_TARGET_FS),ubifs)
-TARGET_RECOVERY_FSTAB = device/fsl/riot_6solo/fstab_nand.freescale
+TARGET_RECOVERY_FSTAB = device/fsl/RIoTboard_6solo/fstab_nand.freescale
 # build ubifs for nand devices
 PRODUCT_COPY_FILES +=	\
-	device/fsl/riot_6solo/fstab_nand.freescale:root/fstab.freescale
+	device/fsl/RIoTboard_6solo/fstab_nand.freescale:root/fstab.freescale
 else
 ifeq ($(BUILD_TARGET_LOCATION),sdmmc)
-TARGET_RECOVERY_FSTAB = device/fsl/riot_6solo/fstab.freescale.sdmmc
+TARGET_RECOVERY_FSTAB = device/fsl/RIoTboard_6solo/fstab.freescale.sdmmc
 # build ext4 for sdmmc
 PRODUCT_COPY_FILES +=   \
-	device/fsl/riot_6solo/fstab.freescale.sdmmc:root/fstab.freescale
+	device/fsl/RIoTboard_6solo/fstab.freescale.sdmmc:root/fstab.freescale
 else
-TARGET_RECOVERY_FSTAB = device/fsl/riot_6solo/fstab.freescale.emmc
+TARGET_RECOVERY_FSTAB = device/fsl/RIoTboard_6solo/fstab.freescale.emmc
 # build ext4 for emmc
 PRODUCT_COPY_FILES +=	\
-	device/fsl/riot_6solo/fstab.freescale.emmc:root/fstab.freescale
+	device/fsl/RIoTboard_6solo/fstab.freescale.emmc:root/fstab.freescale
 endif # BUILD_TARGET_LOCATION
 endif # BUILD_TARGET_FS
 
 
-TARGET_BOOTLOADER_BOARD_NAME := RIOT
-PRODUCT_MODEL := RIOT-MX6SOLO
+TARGET_BOOTLOADER_BOARD_NAME := RIoTboard
+PRODUCT_MODEL := RIoTboard-MX6SOLO
 
 # Wifi
 BOARD_WPA_SUPPLICANT_DRIVER     := WEXT
@@ -59,7 +59,7 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 
 
 ifeq ($(TARGET_USERIMAGES_USE_UBIFS),true)
-UBI_ROOT_INI := device/fsl/riot_6solo/ubi/ubinize.ini
+UBI_ROOT_INI := device/fsl/RIoTboard_6solo/ubi/ubinize.ini
 TARGET_MKUBIFS_ARGS := -m 4096 -e 516096 -c 4096 -x none
 TARGET_UBIRAW_ARGS := -m 4096 -p 512KiB $(UBI_ROOT_INI)
 endif
@@ -80,7 +80,7 @@ endif
 
 # atheros 3k BT
 BOARD_USE_AR3K_BLUETOOTH := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/fsl/riot_6solo/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/fsl/RIoTboard_6solo/bluetooth
 
 USE_ION_ALLOCATOR := false
 USE_GPU_ALLOCATOR := true
@@ -92,6 +92,6 @@ IMX_CAMERA_HAL_V2 := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 
-TARGET_BOOTLOADER_CONFIG := mx6solo_riot_android_config
+TARGET_BOOTLOADER_CONFIG := mx6solo_RIoTboard_android_config
 
 

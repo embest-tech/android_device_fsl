@@ -33,4 +33,4 @@ PRODUCT_MAKEFILES := \
   $(LOCAL_DIR)/sabreauto_6q.mk \
   $(LOCAL_DIR)/sabresd_6dq.mk \
   $(LOCAL_DIR)/hdmidongle_6dq.mk \
-  $(LOCAL_DIR)/riot_6solo.mk \
+  $(LOCAL_DIR)/RIoTboard_6solo.mk \

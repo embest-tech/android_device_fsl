@@ -4,31 +4,31 @@
 $(call inherit-product, device/fsl/imx6/imx6.mk)
 $(call inherit-product-if-exists,vendor/google/products/gms.mk)
 
-ifneq ($(wildcard device/fsl/riot_6solo/fstab_nand.freescale),)
-$(shell touch device/fsl/riot_6solo/fstab_nand.freescale)
+ifneq ($(wildcard device/fsl/RIoTboard_6solo/fstab_nand.freescale),)
+$(shell touch device/fsl/RIoTboard_6solo/fstab_nand.freescale)
 endif
 
-ifneq ($(wildcard device/fsl/riot_6solo/fstab.freescale),)
-$(shell touch device/fsl/riot_6solo/fstab.freescale)
+ifneq ($(wildcard device/fsl/RIoTboard_6solo/fstab.freescale),)
+$(shell touch device/fsl/RIoTboard_6solo/fstab.freescale)
 endif
 
 # Overrides
-PRODUCT_NAME := riot_6solo
-PRODUCT_DEVICE := riot_6solo
+PRODUCT_NAME := RIoTboard_6solo
+PRODUCT_DEVICE := RIoTboard_6solo
 
 PRODUCT_COPY_FILES += \
-	device/fsl/riot_6solo/required_hardware.xml:system/etc/permissions/required_hardware.xml \
-	device/fsl/riot_6solo/init.rc:root/init.freescale.rc \
-	device/fsl/riot_6solo/gpsreset.sh:system/etc/gpsreset.sh \
-	device/fsl/riot_6solo/audio_policy.conf:system/etc/audio_policy.conf \
-	device/fsl/riot_6solo/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-	device/fsl/riot_6solo/rt5370sta.ko:system/lib/hw/rt5370sta.ko \
-	device/fsl/riot_6solo/RT2870STA.dat:/system/etc/Wireless/RT2870STA/RT2870STA.dat \
-	device/fsl/riot_6solo/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf
+	device/fsl/RIoTboard_6solo/required_hardware.xml:system/etc/permissions/required_hardware.xml \
+	device/fsl/RIoTboard_6solo/init.rc:root/init.freescale.rc \
+	device/fsl/RIoTboard_6solo/gpsreset.sh:system/etc/gpsreset.sh \
+	device/fsl/RIoTboard_6solo/audio_policy.conf:system/etc/audio_policy.conf \
+	device/fsl/RIoTboard_6solo/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+	device/fsl/RIoTboard_6solo/rt5370sta.ko:system/lib/hw/rt5370sta.ko \
+	device/fsl/RIoTboard_6solo/RT2870STA.dat:/system/etc/Wireless/RT2870STA/RT2870STA.dat \
+	device/fsl/RIoTboard_6solo/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf
 
 # GPU files
 
-DEVICE_PACKAGE_OVERLAYS := device/fsl/riot_6solo/overlay
+DEVICE_PACKAGE_OVERLAYS := device/fsl/RIoTboard_6solo/overlay
 
 PRODUCT_CHARACTERISTICS := tablet
 
