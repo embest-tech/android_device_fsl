@@ -82,4 +82,5 @@ TARGET_BOOTLOADER_CONFIG := mx6sl:mx6sl_evk_android_config
 BOARD_SEPOLICY_DIRS := \
        device/fsl/evk_6sl/sepolicy
 BOARD_SEPOLICY_UNION := \
-       app.te
+       app.te \
+       netd.te

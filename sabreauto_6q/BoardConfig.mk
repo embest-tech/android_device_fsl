@@ -107,4 +107,5 @@ BOARD_SEPOLICY_DIRS := \
        device/fsl/sabreauto_6q/sepolicy
 
 BOARD_SEPOLICY_UNION := \
-       app.te
+       app.te \
+       netd.te
