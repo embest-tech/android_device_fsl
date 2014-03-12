@@ -83,4 +83,4 @@ BOARD_SEPOLICY_DIRS := \
        device/fsl/evk_6sl/sepolicy
 BOARD_SEPOLICY_UNION := \
        app.te \
-       netd.te
+       file_contexts

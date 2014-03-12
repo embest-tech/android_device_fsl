@@ -114,4 +114,4 @@ BOARD_SEPOLICY_DIRS := \
 
 BOARD_SEPOLICY_UNION := \
        app.te \
-       netd.te
+       file_contexts

@@ -1,3 +1,0 @@
-allow netd self:netlink_socket *;
-allow netd self:packet_socket *;
-allow netd unlabeled:sock_file { create_file_perms rwx_file_perms relabelfrom };
