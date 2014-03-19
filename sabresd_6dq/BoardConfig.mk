@@ -114,4 +114,7 @@ BOARD_SEPOLICY_DIRS := \
 
 BOARD_SEPOLICY_UNION := \
        app.te \
-       file_contexts
+       file_contexts \
+       fs_use \
+       untrusted_app.te \
+       genfs_contexts
