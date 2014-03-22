@@ -32,5 +32,4 @@ PRODUCT_MAKEFILES := \
   $(LOCAL_DIR)/sabresd_6q.mk \
   $(LOCAL_DIR)/sabresd_6dl.mk \
   $(LOCAL_DIR)/sabrelite_6q.mk \
-  $(LOCAL_DIR)/marsboard_6q.mk \
-  $(LOCAL_DIR)/marsboard_6dl.mk
+  $(LOCAL_DIR)/marsboard_6q.mk

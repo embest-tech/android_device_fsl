@@ -11,5 +11,3 @@ add_lunch_combo sabrelite_6q-eng
 add_lunch_combo sabrelite_6q-user
 add_lunch_combo marsboard_6q-eng
 add_lunch_combo marsboard_6q-user
-add_lunch_combo marsboard_6dl-eng
-add_lunch_combo marsboard_6dl-user
