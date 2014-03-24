@@ -120,5 +120,10 @@ service hostapd /system/bin/hostapd /data/misc/wifi/hostapd.conf
     disabled
 
 on fs
-    chmod 0777 /fs_install.rc
-    exec /fs_install.rc
+# mount ext4 partitions
+    mount ext4 /dev/block/mmcblk0p5 /system
+    mount ext4 /dev/block/mmcblk0p5 /system ro remount
+    mount ext4 /dev/block/mmcblk0p7 /data nosuid nodev nodiratime noatime noauto_da_alloc
+    mount ext4 /dev/block/mmcblk0p6 /cache nosuid nodev
+    mount ext4 /dev/block/mmcblk0p8 /vendor nosuid nodev
+

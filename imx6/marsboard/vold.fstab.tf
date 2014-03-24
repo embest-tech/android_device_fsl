@@ -24,9 +24,9 @@ dev_mount udisk /mnt/udisk auto /devices/platform/fsl-ehci.1/usb2
 #used for usb otg host
 #dev_mount udisk /mnt/sdcard/udisk auto /devices/platform/fsl-ehci.0/usb
 #mount SDHC4 SD card /mnt/sdcard as primary storage forMX6Q SABER_LITE RevC
-dev_mount extsd /mnt/extsd auto /devices/platform/sdhci-esdhc-imx.1/mmc_host/mmc0
+dev_mount extsd /mnt/extsd auto /devices/platform/sdhci-esdhc-imx.2/mmc_host/mmc0
 #mount SDHC3 TF card to /mnt/extsd as external storage forMX6Q SABER_LITE RevC
-dev_mount sdcard /mnt/sdcard 4 /devices/platform/sdhci-esdhc-imx.2/mmc_host/mmc1
+dev_mount sdcard /mnt/sdcard 4 /devices/platform/sdhci-esdhc-imx.1/mmc_host/mmc1
 
 ## Example of a dual card setup
 # dev_mount left_sdcard  /sdcard1  auto /devices/platform/goldfish_mmc.0 /devices/platform/msm_sdcc.2/mmc_host/mmc1
