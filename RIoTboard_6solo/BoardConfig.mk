@@ -34,6 +34,10 @@ endif # BUILD_TARGET_FS
 TARGET_BOOTLOADER_BOARD_NAME := RIoTboard
 PRODUCT_MODEL := RIoTboard-MX6SOLO
 
+TARGET_TS_CALIBRATION := true
+TARGET_TS_DEVICE := "ads7846"
+TARGET_TS_SYS_PATH := "/sys/devices/platform/imx6q-ecspi.0/spi_master/spi0/spi0.0/calibration"
+
 # Wifi
 BOARD_WPA_SUPPLICANT_DRIVER     := WEXT
 WIFI_DRIVER_MODULE_PATH         := "/system/lib/hw/rt5370sta.ko"

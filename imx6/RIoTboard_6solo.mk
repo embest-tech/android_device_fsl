@@ -24,7 +24,8 @@ PRODUCT_COPY_FILES += \
 	device/fsl/RIoTboard_6solo/audio_effects.conf:system/vendor/etc/audio_effects.conf \
 	device/fsl/RIoTboard_6solo/rt5370sta.ko:system/lib/hw/rt5370sta.ko \
 	device/fsl/RIoTboard_6solo/RT2870STA.dat:/system/etc/Wireless/RT2870STA/RT2870STA.dat \
-	device/fsl/RIoTboard_6solo/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf
+	device/fsl/RIoTboard_6solo/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf \
+	device/fsl/RIoTboard_6solo/ads7846.idc:system/usr/idc/ads7846.idc
 
 # GPU files
 
