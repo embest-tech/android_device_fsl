@@ -34,3 +34,4 @@ PRODUCT_MAKEFILES := \
   $(LOCAL_DIR)/sabresd_6dq.mk \
   $(LOCAL_DIR)/hdmidongle_6dq.mk \
   $(LOCAL_DIR)/RIoTboard_6solo.mk \
+  $(LOCAL_DIR)/marsboard_6q.mk 
