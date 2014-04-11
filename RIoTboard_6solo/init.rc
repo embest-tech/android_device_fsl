@@ -140,3 +140,7 @@ service ing /system/bin/ingsvcd -c /system/etc/gps/Orion.ini
 on fs
 # mount ext4 partitions
     mount_all /fstab.freescale
+
+# Using landscape lcd
+    setprop lcd.landscape true
+
