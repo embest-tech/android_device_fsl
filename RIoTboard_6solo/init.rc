@@ -123,7 +123,9 @@ on charger
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
 
-service wpa_supplicant /system/bin/wpa_supplicant -Dwext -ira0 -c/etc/wifi/wpa_supplicant.conf
+service wpa_supplicant /system/bin/wpa_supplicant \
+	-Dwext -ira0 -c/etc/wifi/wpa_supplicant.conf \
+	-g@android:wpa_ra0
     socket wpa_ra0 dgram 660 wifi wifi
     class late_start
     disabled
