@@ -164,3 +164,6 @@ service charger /charger
 on fs
 # mount ext4 partitions
     mount_all /fstab.freescale
+
+# Using landscape lcd
+	setprop lcd.landscape true
