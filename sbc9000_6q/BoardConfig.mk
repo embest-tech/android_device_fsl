@@ -18,7 +18,7 @@ PRODUCT_COPY_FILES +=	\
 	device/fsl/sbc9000_6q/fstab_nand.freescale:root/fstab.freescale
 else
 ifeq ($(BUILD_TARGET_LOCATION),sdmmc)
-TARGET_RECOVERY_FSTAB = device/fsl/RIoTboard_6solo/fstab.freescale.sdmmc
+TARGET_RECOVERY_FSTAB = device/fsl/sbc9000_6q/fstab.freescale.sdmmc
 # build ext4 for sdmmc
 PRODUCT_COPY_FILES +=   \
     device/fsl/sbc9000_6q/fstab.freescale.sdmmc:root/fstab.freescale
