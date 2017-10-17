@@ -35,3 +35,4 @@ PRODUCT_MAKEFILES := \
   $(LOCAL_DIR)/hdmidongle_6dq.mk \
   $(LOCAL_DIR)/RIoTboard_6solo.mk \
   $(LOCAL_DIR)/sbc9000_6q.mk \
+  $(LOCAL_DIR)/iptv_6q.mk \

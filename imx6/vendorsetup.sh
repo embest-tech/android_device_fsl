@@ -15,3 +15,5 @@ add_lunch_combo RIoTboard_6solo-eng
 add_lunch_combo RIoTboard_6solo-user
 add_lunch_combo sbc9000_6q-eng
 add_lunch_combo sbc9000_6q-user
+add_lunch_combo iptv_6q-eng
+add_lunch_combo iptv_6q-user
